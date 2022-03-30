@@ -1,0 +1,29 @@
+input = getDirectory("Choose input directory"); 
+
+output = getDirectory("Choose output directory"); 
+
+list = getFileList(input);
+
+for (i = 0; i < list.length; i++)
+        action(input, output, list[i]);
+
+function action(input, output, filename) {filename=list[i];
+open(input + filename);
+run("Set Scale...", "distance=0 known=0 pixel=1 unit=pixel global");
+setTool("Polygon selections");
+run("Select None");
+waitForUser("Select areas","Select the area to analyze and click 'OK'");
+getSelectionBounds(x,y,width,height);
+run("Set Measurements...", "area display redirect=None decimal=3"); 
+run("Measure");
+run("Crop");
+run("Clear Outside");
+run("16-bit");
+
+
+            dotIndex = indexOf(filename, ".");
+            title = substring(filename, 0, dotIndex); 
+
+saveAs("Tiff", output + title); 
+close();
+}

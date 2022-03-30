@@ -1,0 +1,17 @@
+input = "/Volumes/Time Machine Backups/Unknome/Engrailed-GAL4 screen/Images_raw/Repeats_010812/";
+output = "/Volumes/Time Machine Backups/Unknome/Engrailed-GAL4 screen/Binaries/Repeats_010812/";
+setBatchMode(true); 
+list = getFileList(input);
+for (i = 0; i < list.length; i++)
+        action(input, output, list[i]);
+setBatchMode(false);
+function action(input, output, filename) {
+open(input + filename);
+run("Subtract Background...", "rolling=50 light");
+run("Smooth");
+run("Unsharp Mask...", "radius=6 mask=0.60");
+setAutoThreshold();
+run("Convert to Mask");
+saveAs("Jpeg", output + filename); 
+close();
+}

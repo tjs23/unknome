@@ -1,0 +1,38 @@
+input = "U:\\Proteostasis_screen\\Batch13_150223JR_repeats\\Edited_Imgs\\";
+output = "U:\\Proteostasis_screen\\Batch13_150223JR_repeats\\Results\\"; 
+overlays = "U:\\Proteostasis_screen\\Batch13_150223JR_repeats\\Overlays\\"; 
+setBatchMode(true);
+list = getFileList(input);
+for (i = 0; i < list.length; i++)
+        action(input, output, overlays, list[i]);
+setBatchMode(false);
+function action(input, output, overlays, filename) {
+open(input + filename);
+run("Set Scale...", "distance=0 known=0 pixel=1 unit=pixel global");
+print(filename);
+setThreshold(54, 249);
+//run("Threshold...");
+run("Create Selection");
+run("Add to Manager ");
+roiManager("Add");
+run("ROI Manager...");
+roiManager("Select", 0);
+roiManager("Split");
+roiManager("Select", 0);
+roiManager("Delete");
+roiManager("Select All");
+run("Set Measurements...", "area mean standard min integrated display redirect=None decimal=3");
+roiManager("Measure");
+dotIndex = indexOf(filename, ".");
+title = substring(filename, 0, dotIndex); 
+saveAs("Measurements", output + "Results_" + title + ".xls");
+selectWindow("ROI Manager");
+roiManager("Show All with labels");
+run("Flatten");
+saveAs("Jpeg", overlays+title+"_overlay");
+close();
+selectWindow("ROI Manager");
+run("Close");  
+selectWindow("Results");
+run("Close"); }
+close();
