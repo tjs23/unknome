@@ -4,7 +4,7 @@ Contains functions for the setup of FlyWheel images; detection of plate edges, w
 
 ## Notable functions
 
-### findTransformECC()
+### findTransformECC
 
 Performs the ECC transform, using OpenCV, to align flywheel images with their first, reference frame.
 
@@ -34,10 +34,10 @@ Contains functions to analyse the FlyWheel images to track fly motion. Plotting 
 
 ## Notable functions
 
-### plateFlytracker()
+### plateFlytracker
 
 Tracks flies in plate images using intensity contours after background subtration.
 
-### plateToDCrawler()
+### plateToDCrawler
 
 Estimates time of death within plate wells; when movement consistently ceases. 
