@@ -1,6 +1,6 @@
 # Unknome Biological Analysis Scripts
 
-This repository contains Python scripts that were used in the analysis of *Drosophila* phenotype screens done for the following puplication:
+This repository contains Python scripts and ImageJ macros that were used in the analysis of *Drosophila* phenotype screens done for the following puplication:
 
 **"Functional unknomics: Systematic screening of conserved genes of unknown function"**
 Joao Rocha, Satish Arcot Jayaram, Tim J Stevens, Nadine Muschalik,
