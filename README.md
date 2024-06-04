@@ -1,3 +1,17 @@
+# Unknome Biological Analysis Scripts
+
+This repository contains Python scripts that were used in the analysis of *Drosophila* phenotype screens done for the following puplication:
+
+**"Functional unknomics: Systematic screening of conserved genes of unknown function"**
+Joao Rocha, Satish Arcot Jayaram, Tim J Stevens, Nadine Muschalik,
+Rajen D Shah, Sahar Emran, Cristina Robles, Matthew Freeman, Sean Munro
+[PLoS Biol. 2023 Aug; 21(8): e3002222](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3002222) PMID: [37552676](https://pubmed.ncbi.nlm.nih.gov/37552676/)
+
+If you are looking for scripts relating to the setup of the Unknome Database, which underpins the 
+[Unknome web site](https://unknome.mrc-lmb.cam.ac.uk) please see the [unknome_db](https://github.com/tjs23/unknome_db) repository.
+
+
+
 # Flywheel_AlignFunctions.py
 
 Contains functions for the setup of FlyWheel images; detection of plate edges, wells, image alignment etc.
